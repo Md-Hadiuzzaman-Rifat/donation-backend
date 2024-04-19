@@ -7,13 +7,16 @@ const app = express();
 // username : donation
 // password : YxTrghoTpbUSfSrX
 
+// You must install CORS()
+app.use(express.json());
+app.use(cors());
+
+
+
 const port = process.env.port || 2020;
 //Add a Mongodb URL
 const uri = `mongodb+srv://donation:YxTrghoTpbUSfSrX@firstcluster.mxvk5xz.mongodb.net/`;
 
-// You must install CORS()
-app.use(cors());
-app.use(express.json());
 
 const client = new MongoClient(uri, {
   serverApi: {
