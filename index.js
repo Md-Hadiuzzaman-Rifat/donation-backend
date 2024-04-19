@@ -7,7 +7,7 @@ const app = express();
 // username : donation
 // password : YxTrghoTpbUSfSrX
 
-const port = 2020;
+const port = process.env.port || 2020;
 //Add a Mongodb URL
 const uri = `mongodb+srv://donation:YxTrghoTpbUSfSrX@firstcluster.mxvk5xz.mongodb.net/`;
 
@@ -133,5 +133,5 @@ app.get("/responses/:loanId", async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening on port 'port'`);
+  console.log(`Example app listening on port ${port}`);
 });
